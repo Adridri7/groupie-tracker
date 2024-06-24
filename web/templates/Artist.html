@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <link rel="icon" type="image/x-icon" href="../static/icon.png">
+    <link rel="stylesheet" href="../static/Artist.css">
+</head>
+
+<header>
+    <a class="logo">Groupie-Tracker</a>
+    <div class="header-right">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </div>
+</header>
+
+<body>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <div class="content">
+                    <img src="{{.Data5.Image}}" alt="{{.Data5.Name}}" class="responsive-img">
+                    <div>
+                        <h2>{{.Data5.Name}}</h2>
+                        <p><strong>Membres:</strong></p>
+                        <p>{{.Data5.Members}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card-back">
+                <h2>Concerts</h2>
+                <ul>
+                    {{range $i, $e := .Data6}}
+                    <li><strong>{{$i}} : </strong>{{$e}}</li>
+                    {{end}}
+                </ul>
+                <p><strong>Premier concert : </strong>{{.Data5.FirstAlbum}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
